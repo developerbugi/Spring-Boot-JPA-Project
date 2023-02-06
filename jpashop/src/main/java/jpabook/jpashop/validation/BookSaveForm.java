@@ -17,6 +17,7 @@ public class BookSaveForm {
     private int price;
     @NotNull(message = "수량을 입력해주세요")
     @Max(value = 9999, message = "수량은 9999이하로 입력해주세요")
+    @Min(value = 1, message = "수량은 1개 이상으로 입력해주세요")
     private int stockQuantity;
 
     @NotBlank(message = "저자를 입력해주세요")

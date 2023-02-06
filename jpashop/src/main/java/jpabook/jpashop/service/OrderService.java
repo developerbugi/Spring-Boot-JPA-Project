@@ -32,6 +32,12 @@ public class OrderService {
         Member member = memberRepository.findOne(memberId);
         Item item = itemRepository.findOne(itemId);
 
+        int stockQuantity = item.getStockQuantity();
+
+        if(stockQuantity - count < 0){
+            return 0L;
+        }
+
         Delivery delivery = new Delivery();
         delivery.setAddress(member.getAddress());
 
